@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>OnTrack</title>
+</head>
+
+<body>
+    <header id="heading">
+        <h1>OnTrack</h1>
+        <nav id="navbar">
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a id="reg-link" href="#">Register</a>
+                </li>
+                <li>
+                    <a id="log-link" href="#">Log in</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="container1">
+            <h2>Project Name:</h2>
+            <article id="jsReport">
+
+            </article>
+            <button type="submit" id="jsCreate">Add New Project</button>
+
+        </section>
+        <section id="container2">
+            <h2>Create a new Project</h2>
+            <article>
+                <form id="jsForm">
+                    <ul>
+                        <li>
+                            <label>Enter or Choose a Date:</label>
+                            <input id="jsDate" type="text" placeholder="Date">
+                        </li>
+                        <li>
+                            <label>Enter Project Name:</label>
+                            <input id="jsProject" type="text" placeholder="Project">
+                        </li>
+                        <li>
+                            <label>Enter Project Status:</label>
+                            <input id="jsStatus" type="text" placeholder="Project Manager">
+                        </li>
+                        <li>
+                            <label>Enter Project Manager Name:</label>
+                            <input id="jsPm" type="text" placeholder="text">
+                        </li>
+                        <li>
+                            <label>Enter Release Date:</label>
+                            <input id="jsRelease" type="text" placeholder="email address">
+                        </li>
+                        <li>
+                            <label>Share With Team:</label>
+                            <input id="jsShare" type="text" placeholder="email address">
+                        </li>
+                    </ul>
+                    <button type="button" id="jsCancel">Cancel</button>
+                    <button type="submit" id="jsAdd">Add</button>
+                </form>
+            </article>
+        </section>
+        <section id="container3">
+            <h2>Edit a Project</h2>
+            <article>
+                <form id="jsEditForm">
+                    <ul>
+                        <li>
+                            <label>Enter or Choose a Date:</label>
+                            <input id="edit-date" type="text" placeholder="Date">
+                        </li>
+                        <li>
+                            <label>Enter Project Status:</label>
+                            <input id="edit-status" type="text" placeholder="text">
+                        </li>
+                        <li>
+                            <label>Team:</label>
+                            <input id="edit-team" type="text" placeholder="name">
+                    </ul>
+                    <button type="button" id="jsCancel2">Cancel</button>
+                    <button type="submit" id="jsUpdate">Update</button>
+                </form>
+            </article>
+        </section>
+        <section id="container4">
+            <h2>Project Details:</h2>
+            <article id="jsProjectDetails">
+                
+            </article>
+
+        </section>
+        <section id="signup-container">
+            <h2>Register:</h2>
+            <article id="jsRegister">
+                <form id="jsRegisterForm">
+                    <ul>
+                        <li>
+                            <label>Enter Your Name:</label>
+                            <input id="rName" type="text" placeholder="name">
+                        </li>
+                        <li>
+                            <label>Enter Your e-mail:</label>
+                            <input id="rEmail" type="text" placeholder="name@example.com">
+                        </li>
+                        <li>
+                            <label>Create Your Password:</label>
+                            <input id="rPass" type="text" placeholder="password">
+                        </li>
+                    </ul>
+                </form>
+            </article>
+            <button type="submit" id="jsRegister">Sign up</button>
+        </section>
+        <section id="login-container">
+            <h2>Log in:</h2>
+            <article id="jsRegister">
+                <form id="jsRegisterForm">
+                    <ul>
+                        <li>
+                            <label>Enter Your e-mail:</label>
+                            <input id="lEmail" type="text" placeholder="name">
+                        </li>
+                        <li>
+                            <label>Enter Your Password:</label>
+                            <input id="lPass" type="text" placeholder="password">
+                        </li>
+                    </ul>
+                </form>
+            </article>
+            <button type="submit" id="jsLogin">Log in</button>
+        </section>
+    </main>
+    <footer id="jsFooter">
+        <p>footer info...</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>

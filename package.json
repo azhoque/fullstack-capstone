@@ -1,0 +1,26 @@
+{
+  "name": "ontrack",
+  "version": "1.0.0",
+  "description": "Project tracking app",
+  "main": "server.js",
+  "scripts": {
+    "test":  "mocha",
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.12.4",
+    "mongoose": "^4.7.1",
+    "morgan": "^1.7.0",
+    "uuid": "^2.0.3",
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  },
+  "keywords": [
+    "node",
+    "hyperdev",
+    "express"
+  ],
+  "author": "Aziz Hoque",
+  "license": "ISC"
+}
