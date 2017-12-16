@@ -67,20 +67,15 @@ $(function() {
     $("#login-container").show();
     $("#container1").hide();
  });
- 
-//  function deleteProject(itemIndex){
-//     state.project.splice(itemIndex, 1);
-//  }
-//  function handleDeleteClick(){
-//      $("#jsEditForm").on('click', '#jsDelete', event => {
-//         const deleteItem = state.projects.filter((project) =>{
-//             return project != deleteProject 
-//         });
-        
-//      });
-//  }
 
 }); 
+function handleDeleteClick(){
+  console.log("handleclicked");
+  console.log(state.project);
+  deleteDataFromApi(state.project.id, state.project, ()=>{
+      location.reload();
+  });
+}
 function renderListItem() {
   $("#jsReport").html("");
   state.projects.forEach(addProject => {
@@ -109,12 +104,17 @@ function renderListItem() {
       $("#edit-team").val(addProject.share);
       state.project = addProject;
     });
-
+    newItemJs.find("#jsDelete").click(function() {
+      console.log("deleteclicked");
+      state.project = addProject;
+      handleDeleteClick();
+    });
     $("#jsReport").append(newItemJs);
   });
   $("#container1").show();
   $("#container2").hide();
 }
+  
 function renderStatusList() {
   $("#jsProjectDetails").html("");
   state.projects.forEach(addStatus => {
@@ -188,9 +188,9 @@ function postDataFromApi(projectData, callback) {
   $.ajax(settings);
 }
 
-function deleteDataFromApi(projectData, callback) {
+function deleteDataFromApi(projectId, projectData, callback) {
   const settings = {
-    url: "http://localhost:8080/projects",
+    url: "http://localhost:8080/projects/" + projectId,
     contentType: 'application/json',
     data: JSON.stringify(projectData), 
     type: 'DELETE',
