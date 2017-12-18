@@ -5,36 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <title>OnTrack</title>
 </head>
 
 <body>
-    <header id="heading">
-        <h1>OnTrack</h1>
-        <nav id="navbar">
-            <ul>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo right">OnTrack</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li>
-                    <a href="#">Home</a>
+                    <a id="home-link"href="#">Home</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a id="about-link"href="#">About</a>
                 </li>
                 <li>
                     <a id="reg-link" href="#">Register</a>
                 </li>
-                <li>
-                    <a id="log-link" href="#">Log in</a>
-                </li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
+
     <main>
         <section id="container1">
-            <h2>Project Name:</h2>
+            <!--<h2>Project Name:</h2>
             <article id="jsReport">
 
-            </article>
+            </article>-->
+            <table class="striped">
+                <thead class="blue-grey lighten-4">
+                    <tr>
+                        <th>Date</th>
+                        <th>Project Name</th>
+                        <th>Project Status</th>
+                        <th>Project Manager</th>
+                        <th>Release Date</th>
+                        <th>Team</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody id="jsReport">
+
+                </tbody>
+            </table>
             <button type="submit" id="jsCreate">Add New Project</button>
 
         </section>
@@ -98,7 +114,7 @@
         <section id="container4">
             <h2>Project Details:</h2>
             <article id="jsProjectDetails">
-                
+
             </article>
 
         </section>

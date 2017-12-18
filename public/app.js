@@ -61,6 +61,7 @@ $(function() {
     $("#signup-container").show();
     $("#container1").hide();
     $("#login-container").hide();
+    $("#container4").hide();
  });
  $("#log-link").click(function(){
     $("#signup-container").hide();
@@ -69,6 +70,29 @@ $(function() {
  });
 
 }); 
+  $("#jsRegister").click(function(){
+    let username = $("#rName").val();
+    console.log(username);
+    let useremail = $("#rEmail").val();
+    console.log(useremail);
+    let userpass = $("#rPass").val();
+    console.log(userpass);
+
+    var newUser = {"email": useremail, "username": username, "password": userpass};
+    $.ajax({     
+        type: "POST",
+        contentType: 'application/json',
+        url: "http://localhost:8080/register",
+        data: JSON.stringify(newUser),
+        success: function (data) {
+            console.log(data);
+            localStorage.setItem('token', data);
+        },
+    });
+    });
+
+
+
 function handleDeleteClick(){
   console.log("handleclicked");
   console.log(state.project);
@@ -79,21 +103,20 @@ function handleDeleteClick(){
 function renderListItem() {
   $("#jsReport").html("");
   state.projects.forEach(addProject => {
-    const newItem = `<div>
-            <ul>
-            <li>Date:${addProject.date}</li>
-            <li>Project Name:${addProject.project}</li>
-            <li>Project Status:${addProject.recentStatus}</li>
-            <li>Project Manager:${addProject.pm}</li>
-            <li>Release Date:${addProject.release}</li>
-            <li>Team:${addProject.share}</li>
-            <li>
+    const newItem =
+            `<tr>
+            <td>${addProject.date}</td>
+            <td>${addProject.project}</td>
+            <td>${addProject.recentStatus}</td>
+            <td>${addProject.pm}</td>
+            <td>${addProject.release}</td>
+            <td>${addProject.share}</td>
+            <td>
             <button type="button" id="jsEdit">Edit</button>
             <button type= "button" id="jsDelete">Delete</button>
             <button type= "button" id="jsDetail">Project Detail</button>
-            </li>
-            </ul>
-        </div>`;
+            </td>
+            </tr>`;
     const newItemJs = $(newItem);
     newItemJs.find("#jsEdit").click(function() {
       $("#container1").hide();
@@ -157,6 +180,9 @@ function renderPage() {
     $("#container2").show();
     
   });
+
+  
+
   getDataFromApi(function(projects){
     state.projects= projects;
     renderListItem();

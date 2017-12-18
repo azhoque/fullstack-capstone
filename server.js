@@ -2,10 +2,9 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
-
-const { DATABASE_URL, PORT } = require("./config");
-const { OnTrack } = require("./models");
-
+const jwt = require("jsonwebtoken");
+const { DATABASE_URL, PORT, JWT_SECRET, JWT_EXPIRY} = require("./config");
+const { OnTrack, User} = require("./models");
 const app = express();
 
 app.use(morgan("common"));
@@ -97,6 +96,55 @@ app.delete("/:id", (req, res) => {
     res.status(204).end();
   });
 });
+
+app.post('/register', (req, res) => {
+  let username = req.body.username;
+  let password = req.body.password;
+  let email = req.body.email;
+  return User.find({username})
+    .count()
+    .then(count => {
+      if (count > 0) {
+        // There is an existing user with the same username
+        return Promise.reject({
+          code: 422,
+          reason: 'ValidationError',
+          message: 'Username already taken',
+          location: 'username'
+        });
+      }
+      // If there is no existing user, hash the password
+      return User.hashPassword(password);
+    })
+    .then(hash => {
+      return User.create({
+        email,
+        username,
+        password: hash,
+      });
+    })
+    .then(user => {
+      const authToken = createAuthToken(user);
+      return res.status(201).json(authToken);
+    })
+    .catch(err => {
+      console.log(err);
+      // Forward validation errors on to the client, otherwise give a 500
+      // error because something unexpected has happened
+      if (err.reason === 'ValidationError') {
+        return res.status(err.code).json(err);
+      }
+      res.status(500).json({code: 500, message: 'Internal server error'});
+    });
+});
+const createAuthToken = function(user) {
+  return jwt.sign({user}, config.JWT_SECRET, {
+    subject: user.username,
+    expiresIn: config.JWT_EXPIRY,
+    algorithm: 'HS256'
+  });
+};
+
 
 app.use("*", function(req, res) {
   res.status(404).json({ message: "Not Found" });

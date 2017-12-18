@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 const ontrackSchema = mongoose.Schema({
   date: { type: Date },
@@ -9,6 +10,7 @@ const ontrackSchema = mongoose.Schema({
   recentStatus: { type: String },
   share: { type: String }
 });
+
 
 ontrackSchema.methods.apiRepr = function() {
   return {
@@ -22,7 +24,20 @@ ontrackSchema.methods.apiRepr = function() {
     share: this.share
   };
 };
-
+const userSchema = mongoose.Schema({
+  username:{type:String, required:true, unique:true},
+  email:{type:String, required:true, unique:true},
+  password:{type:String, required:true, unique:true}
+});
+userSchema.methods.validatePassword = function(password) {
+  return bcrypt.compare(password, this.password);
+};
+userSchema.statics.hashPassword = function(password) {
+  return bcrypt.hash(password, 10);
+};
 const OnTrack = mongoose.model("OnTrack", ontrackSchema);
+const User = mongoose.model("User", userSchema);
+module.exports = { OnTrack, User};
 
-module.exports = { OnTrack };
+
+
