@@ -48,7 +48,7 @@ $(function() {
 
   $("#jsForm").on('click', '#jsCancel', event => {
     $("#container1").show();
-    $("#container3").hide();
+    $("#container2").hide();
  });
 
  $("#jsEditForm").on('click', '#jsCancel2', event => {
@@ -62,6 +62,7 @@ $(function() {
     $("#container1").hide();
     $("#login-container").hide();
     $("#container4").hide();
+    $("#container3").hide();
  });
  $("#log-link").click(function(){
     $("#signup-container").hide();
@@ -69,7 +70,20 @@ $(function() {
     $("#container1").hide();
  });
 
+$("#home-link").click(function(){
+  renderPage();
+});
+//native JS method
+let isLoggedIn = localStorage.getItem('token');
+if (isLoggedIn){
+  $("#reg-link").hide();
+  $("#sign-out").show();
+}
 }); 
+$("#sign-out").click(function(){
+  localStorage.removeItem('token');//native js method
+  location.reload();
+});
   $("#jsRegister").click(function(){
     let username = $("#rName").val();
     console.log(username);
@@ -87,6 +101,7 @@ $(function() {
         success: function (data) {
             console.log(data);
             localStorage.setItem('token', data);
+            location.reload();
         },
     });
     });
@@ -111,10 +126,11 @@ function renderListItem() {
             <td>${addProject.pm}</td>
             <td>${addProject.release}</td>
             <td>${addProject.share}</td>
+            
             <td>
-            <button type="button" id="jsEdit">Edit</button>
-            <button type= "button" id="jsDelete">Delete</button>
-            <button type= "button" id="jsDetail">Project Detail</button>
+            <button type= "button" class="btn waves-effect waves-light" id="jsEdit">edit</button>
+            <button type= "button" class="btn waves-effect waves-light" id="jsDelete">Delete</button>
+            <button type= "button" class="btn waves-effect waves-light" id="jsDetail">Detail</button>
             </td>
             </tr>`;
     const newItemJs = $(newItem);
@@ -138,30 +154,29 @@ function renderListItem() {
   $("#container2").hide();
 }
   
-function renderStatusList() {
-  $("#jsProjectDetails").html("");
-  state.projects.forEach(addStatus => {
-    const newStatus = `<div>
-            <ul>
-            <li>Date:${addStatus.date}</li>
-            <li>Status History:${addStatus.statusHistory}</li>
-            <li>
-            <button type="button" id="jsBack">Back</button>
-            </li>
-            </ul>
-        </div>`;
-    const newStatusJs = $(newStatus);
-    newStatusJs.find("#jsDetail").click(function(){
-      $("#container1").hide();
-      $("#container2").hide();
-      $("#container3").hide();
-      $("#container4").show();
-      state.project = addStatus;
-    });
-    $("#jsProjectDetails").append(newStatusJs);    
-  });
+// function renderStatusList() {
+//   $("#jsProjectDetails").html("");
+//   state.projects.forEach(addStatus => {
+//     const newStatus 
+//     `<tr>
+//     <td>${addStatus.date}</td>
+//     <td>${addStatus.recentStatus}</td>
+//     <td>${addStatus.pm}</td>
+//     <td>${addStatus.share}</td>
+//     </tr>`;
+//     const newStatusJs = $(newStatus);
+//     newStatusJs.find("#jsDetail").click(function(){
+//       $("#container1").hide();
+//       $("#container2").hide();
+//       $("#container3").hide();
+//       $("#container4").hide();
+  
+//       state.project = addStatus;
+//     });
+//     $("#jsProjectDetails").append(newStatusJs);    
+//   });
 
-}
+// }
 
 function editProject() {
   $("#jsEditForm").on(click);
@@ -171,6 +186,8 @@ function renderPage() {
   $("#container1").show();
   $("#container2").hide();
   $("#container3").hide();
+  $("#container4").hide();
+
   $("#signup-container").hide();
   $("#login-container").hide();
 

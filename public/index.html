@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <nav>
+    <nav class="blue lighten-2">
         <div class="nav-wrapper">
             <a href="#" class="brand-logo right">OnTrack</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -25,6 +25,9 @@
                 <li>
                     <a id="reg-link" href="#">Register</a>
                 </li>
+                <li>
+                    <a hidden id="sign-out" href="#">Sign out</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -35,8 +38,8 @@
             <article id="jsReport">
 
             </article>-->
-            <table class="striped">
-                <thead class="blue-grey lighten-4">
+            <table id="table1" class="striped">
+                <thead id="thead" class="blue-grey lighten-4">
                     <tr>
                         <th>Date</th>
                         <th>Project Name</th>
@@ -44,15 +47,14 @@
                         <th>Project Manager</th>
                         <th>Release Date</th>
                         <th>Team</th>
-                        <th>Edit</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="jsReport">
 
                 </tbody>
             </table>
-            <button type="submit" id="jsCreate">Add New Project</button>
-
+            <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsCreate">Add New Project</button>
         </section>
         <section id="container2">
             <h2>Create a new Project</h2>
@@ -114,13 +116,24 @@
         <section id="container4">
             <h2>Project Details:</h2>
             <article id="jsProjectDetails">
-
+                    <table id="table2" class="striped">
+                            <thead id="thead2" class="blue-grey lighten-4">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Project Status</th>
+                                    <th>Project Manager</th>
+                                    <th>Team</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                          </table>
+                        <button class="btn waves-effect blue lighten-2 center-align" type="button" id="jsBack">Go Back</button>
             </article>
 
         </section>
         <section id="signup-container">
             <h2>Register:</h2>
-            <article id="jsRegister">
+            <article>
                 <form id="jsRegisterForm">
                     <ul>
                         <li>
@@ -158,6 +171,7 @@
             </article>
             <button type="submit" id="jsLogin">Log in</button>
         </section>
+
     </main>
     <footer id="jsFooter">
         <p>footer info...</p>

@@ -50,6 +50,7 @@ app.post("/projects", (req, res) => {
     pm: req.body.pm,
     release: req.body.release,
     recentStatus: req.body.recentStatus,
+    statusHistory: [{message: req.body.recentStatus, date: new Date()}],
     share: req.body.share
   })
     .then(onTrack => res.status(201).json(onTrack.apiRepr()))
@@ -138,9 +139,9 @@ app.post('/register', (req, res) => {
     });
 });
 const createAuthToken = function(user) {
-  return jwt.sign({user}, config.JWT_SECRET, {
+  return jwt.sign({user},JWT_SECRET, {
     subject: user.username,
-    expiresIn: config.JWT_EXPIRY,
+    expiresIn:JWT_EXPIRY,
     algorithm: 'HS256'
   });
 };
