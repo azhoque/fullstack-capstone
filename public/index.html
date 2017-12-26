@@ -3,12 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>Ontrack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <title>OnTrack</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    
 </head>
 
 <body>
@@ -17,10 +22,10 @@
             <a href="#" class="brand-logo right">OnTrack</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li>
-                    <a id="home-link"href="#">Home</a>
+                    <a id="home-link" href="#">Home</a>
                 </li>
                 <li>
-                    <a id="about-link"href="#">About</a>
+                    <a id="about-link" href="#">About</a>
                 </li>
                 <li>
                     <a id="reg-link" href="#">Register</a>
@@ -32,149 +37,177 @@
         </div>
     </nav>
 
-    <main>
-        <section id="container1">
-            <!--<h2>Project Name:</h2>
+
+    <section id="container1">
+        <!--<h2>Project Name:</h2>
             <article id="jsReport">
 
             </article>-->
-            <table id="table1" class="striped">
-                <thead id="thead" class="blue-grey lighten-4">
+        <table id="table1" class="striped">
+            <thead id="thead" class="blue-grey lighten-4">
+                <tr>
+                    <th>Date</th>
+                    <th>Project Name</th>
+                    <th>Project Status</th>
+                    <th>Project Manager</th>
+                    <th>Release Date</th>
+                    <th>Team</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="jsReport">
+
+            </tbody>
+        </table>
+        <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsCreate">Add New Project</button>
+    </section>
+    <section id="container2">
+        <h2>Create a new Project</h2>
+        <article>
+            <form id="jsForm">
+                <ul>
+                    <li>
+                        <label>Enter or Choose a Date:</label>
+                        <input id="jsDate" type="text" placeholder="Date">
+                    </li>
+                    <li>
+                        <label>Enter Project Name:</label>
+                        <input id="jsProject" type="text" placeholder="Project">
+                    </li>
+                    <li>
+                        <label>Enter Project Status:</label>
+                        <input id="jsStatus" type="text" placeholder="Project Manager">
+                    </li>
+                    <li>
+                        <label>Enter Project Manager Name:</label>
+                        <input id="jsPm" type="text" placeholder="text">
+                    </li>
+                    <li>
+                        <label>Enter Release Date:</label>
+                        <input id="jsRelease" type="text" placeholder="email address">
+                    </li>
+                    <li>
+                        <label>Share With Team:</label>
+                        <input id="jsShare" type="text" placeholder="email address">
+                    </li>
+                </ul>
+                <button type="button" id="jsCancel">Cancel</button>
+                <button type="submit" id="jsAdd">Add</button>
+            </form>
+        </article>
+    </section>
+    <section id="container3">
+        <h2>Edit a Project</h2>
+        <article>
+            <form id="jsEditForm">
+                <ul>
+                    <li>
+                        <label>Enter or Choose a Date:</label>
+                        <input id="edit-date" type="text" placeholder="Date">
+                    </li>
+                    <li>
+                        <label>Enter Project Status:</label>
+                        <input id="edit-status" type="text" placeholder="text">
+                    </li>
+                    <li>
+                        <label>Team:</label>
+                        <input id="edit-team" type="text" placeholder="name">
+                </ul>
+                <button type="button" id="jsCancel2">Cancel</button>
+                <button type="submit" id="jsUpdate">Update</button>
+            </form>
+        </article>
+    </section>
+    <section id="container4">
+        <h2>Project Details:</h2>
+        <article id="jsProjectDetails">
+            <table id="table2" class="striped">
+                <thead id="thead2" class="blue-grey lighten-4">
                     <tr>
                         <th>Date</th>
-                        <th>Project Name</th>
                         <th>Project Status</th>
                         <th>Project Manager</th>
-                        <th>Release Date</th>
                         <th>Team</th>
                         <th></th>
                     </tr>
                 </thead>
-                <tbody id="jsReport">
-
-                </tbody>
             </table>
-            <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsCreate">Add New Project</button>
-        </section>
-        <section id="container2">
-            <h2>Create a new Project</h2>
-            <article>
-                <form id="jsForm">
-                    <ul>
-                        <li>
-                            <label>Enter or Choose a Date:</label>
-                            <input id="jsDate" type="text" placeholder="Date">
-                        </li>
-                        <li>
-                            <label>Enter Project Name:</label>
-                            <input id="jsProject" type="text" placeholder="Project">
-                        </li>
-                        <li>
-                            <label>Enter Project Status:</label>
-                            <input id="jsStatus" type="text" placeholder="Project Manager">
-                        </li>
-                        <li>
-                            <label>Enter Project Manager Name:</label>
-                            <input id="jsPm" type="text" placeholder="text">
-                        </li>
-                        <li>
-                            <label>Enter Release Date:</label>
-                            <input id="jsRelease" type="text" placeholder="email address">
-                        </li>
-                        <li>
-                            <label>Share With Team:</label>
-                            <input id="jsShare" type="text" placeholder="email address">
-                        </li>
-                    </ul>
-                    <button type="button" id="jsCancel">Cancel</button>
-                    <button type="submit" id="jsAdd">Add</button>
-                </form>
-            </article>
-        </section>
-        <section id="container3">
-            <h2>Edit a Project</h2>
-            <article>
-                <form id="jsEditForm">
-                    <ul>
-                        <li>
-                            <label>Enter or Choose a Date:</label>
-                            <input id="edit-date" type="text" placeholder="Date">
-                        </li>
-                        <li>
-                            <label>Enter Project Status:</label>
-                            <input id="edit-status" type="text" placeholder="text">
-                        </li>
-                        <li>
-                            <label>Team:</label>
-                            <input id="edit-team" type="text" placeholder="name">
-                    </ul>
-                    <button type="button" id="jsCancel2">Cancel</button>
-                    <button type="submit" id="jsUpdate">Update</button>
-                </form>
-            </article>
-        </section>
-        <section id="container4">
-            <h2>Project Details:</h2>
-            <article id="jsProjectDetails">
-                    <table id="table2" class="striped">
-                            <thead id="thead2" class="blue-grey lighten-4">
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Project Status</th>
-                                    <th>Project Manager</th>
-                                    <th>Team</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                          </table>
-                        <button class="btn waves-effect blue lighten-2 center-align" type="button" id="jsBack">Go Back</button>
-            </article>
+            <button class="btn waves-effect blue lighten-2 center-align" type="button" id="jsBack">Go Back</button>
+        </article>
 
-        </section>
-        <section id="signup-container">
-            <h2>Register:</h2>
-            <article>
-                <form id="jsRegisterForm">
-                    <ul>
-                        <li>
-                            <label>Enter Your Name:</label>
-                            <input id="rName" type="text" placeholder="name">
-                        </li>
-                        <li>
-                            <label>Enter Your e-mail:</label>
-                            <input id="rEmail" type="text" placeholder="name@example.com">
-                        </li>
-                        <li>
-                            <label>Create Your Password:</label>
-                            <input id="rPass" type="text" placeholder="password">
-                        </li>
-                    </ul>
-                </form>
-            </article>
-            <button type="submit" id="jsRegister">Sign up</button>
-        </section>
-        <section id="login-container">
-            <h2>Log in:</h2>
-            <article id="jsRegister">
-                <form id="jsRegisterForm">
-                    <ul>
-                        <li>
-                            <label>Enter Your e-mail:</label>
-                            <input id="lEmail" type="text" placeholder="name">
-                        </li>
-                        <li>
-                            <label>Enter Your Password:</label>
-                            <input id="lPass" type="text" placeholder="password">
-                        </li>
-                    </ul>
-                </form>
-            </article>
-            <button type="submit" id="jsLogin">Log in</button>
-        </section>
+    </section>
+    <section id="signup-container">
+        <h2>Register:</h2>
+        <article>
+            <form id="jsRegisterForm">
+                <ul>
+                    <li>
+                        <label>Enter Your Name:</label>
+                        <input id="rName" type="text" placeholder="name">
+                    </li>
+                    <li>
+                        <label>Enter Your e-mail:</label>
+                        <input id="rEmail" type="text" placeholder="name@example.com">
+                    </li>
+                    <li>
+                        <label>Create Your Password:</label>
+                        <input id="rPass" type="text" placeholder="password">
+                    </li>
+                </ul>
+            </form>
+        </article>
+        <button type="submit" id="jsRegister">Sign up</button>
+    </section>
+    <section id="login-container">
+        <h2>Log in:</h2>
+        <article id="jsRegister">
+            <form id="jsRegisterForm">
+                <ul>
+                    <li>
+                        <label>Enter Your e-mail:</label>
+                        <input id="lEmail" type="text" placeholder="name">
+                    </li>
+                    <li>
+                        <label>Enter Your Password:</label>
+                        <input id="lPass" type="text" placeholder="password">
+                    </li>
+                </ul>
+            </form>
+        </article>
+        <button type="submit" id="jsLogin">Log in</button>
+    </section>
 
-    </main>
-    <footer id="jsFooter">
-        <p>footer info...</p>
+    <footer class="page-footer blue-grey darken-3">
+        <div class="container">
+            <div class="row">
+                
+                    <h5 class="white-text">Connect</h5>
+                    <ul class="social">
+                        <li>
+                            <a href="https://www.facebook.com/theaceshigh" target=_blank>
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/azizul-hoque-39b0b847/" target=_blank>
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/azhoque" target=_blank>
+                                <i class="fa fa-github" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <p class="center">© 2017 Copyright www.unplugged.com</p>
+            </div>
+        </div>
     </footer>
     <script src="app.js"></script>
 </body>

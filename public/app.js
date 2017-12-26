@@ -60,6 +60,7 @@ $(function() {
  $("#reg-link").click(function(){
     $("#signup-container").show();
     $("#container1").hide();
+    $("#container2").hide();
     $("#login-container").hide();
     $("#container4").hide();
     $("#container3").hide();
@@ -68,6 +69,8 @@ $(function() {
     $("#signup-container").hide();
     $("#login-container").show();
     $("#container1").hide();
+    $("#container2").hide();
+    $("#container4").hide();
  });
 
 $("#home-link").click(function(){
@@ -135,6 +138,7 @@ function renderListItem() {
             </tr>`;
     const newItemJs = $(newItem);
     newItemJs.find("#jsEdit").click(function() {
+      event.preventDefault();
       $("#container1").hide();
       $("#container2").hide();
       $("#container3").show();
@@ -178,24 +182,24 @@ function renderListItem() {
 
 // }
 
-function editProject() {
-  $("#jsEditForm").on(click);
-}
+
 
 function renderPage() {
   $("#container1").show();
   $("#container2").hide();
   $("#container3").hide();
   $("#container4").hide();
-
   $("#signup-container").hide();
   $("#login-container").hide();
+ 
 
   $("#jsCreate").click(function() {
     $("#container1").hide();
     $("#container3").hide();
     $("#container2").show();
-    
+    $("#container4").hide();
+    $("#signup-container").hide();
+    $("#login-container").hide();
   });
 
   
