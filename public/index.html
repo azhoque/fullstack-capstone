@@ -62,7 +62,7 @@
         <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsCreate">Add New Project</button>
     </section>
     <section id="container2">
-        <h2>Create a new Project</h2>
+        <h3>Create a new Project</h3>
         <article>
             <form id="jsForm">
                 <ul>
@@ -91,13 +91,13 @@
                         <input id="jsShare" type="text" placeholder="email address">
                     </li>
                 </ul>
-                <button type="button" id="jsCancel">Cancel</button>
-                <button type="submit" id="jsAdd">Add</button>
+                <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsCancel">Cancel</button>
+                <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsAdd">Add</button>
             </form>
         </article>
     </section>
     <section id="container3">
-        <h2>Edit a Project</h2>
+        <h3>Edit a Project</h3>
         <article>
             <form id="jsEditForm">
                 <ul>
@@ -113,31 +113,32 @@
                         <label>Team:</label>
                         <input id="edit-team" type="text" placeholder="name">
                 </ul>
-                <button type="button" id="jsCancel2">Cancel</button>
-                <button type="submit" id="jsUpdate">Update</button>
+                <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsCancel2">Cancel</button>
+                <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsUpdate">Update</button>
             </form>
         </article>
     </section>
     <section id="container4">
-        <h2>Project Details:</h2>
-        <article id="jsProjectDetails">
+        <h3>Project Details:</h3>
+        <article>
             <table id="table2" class="striped">
                 <thead id="thead2" class="blue-grey lighten-4">
                     <tr>
                         <th>Date</th>
                         <th>Project Status</th>
-                        <th>Project Manager</th>
-                        <th>Team</th>
-                        <th></th>
+                        
                     </tr>
                 </thead>
+                <tbody id="jsProjectDetails">
+
+                </tbody>
             </table>
-            <button class="btn waves-effect blue lighten-2 center-align" type="button" id="jsBack">Go Back</button>
+            <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsBack">Go Back</button>
         </article>
 
     </section>
     <section id="signup-container">
-        <h2>Register:</h2>
+        <h3>Register:</h3>
         <article>
             <form id="jsRegisterForm">
                 <ul>
@@ -156,10 +157,11 @@
                 </ul>
             </form>
         </article>
-        <button type="submit" id="jsRegister">Sign up</button>
+        <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsCancel3">Cancel</button>
+        <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsRegister">Sign up</button>
     </section>
     <section id="login-container">
-        <h2>Log in:</h2>
+        <h3>Log in:</h3>
         <article id="jsRegister">
             <form id="jsRegisterForm">
                 <ul>
@@ -174,7 +176,7 @@
                 </ul>
             </form>
         </article>
-        <button type="submit" id="jsLogin">Log in</button>
+        <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsLogin">Log in</button>
     </section>
 
     <footer class="page-footer blue-grey darken-3">
@@ -205,7 +207,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                <p class="center">© 2017 Copyright www.unplugged.com</p>
+                <p class="center">© 2017 Copyright www.ontrack.com</p>
             </div>
         </div>
     </footer>

@@ -2,9 +2,9 @@
   box-sizing: border-box;
 }
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
 }
 
 nav {
@@ -19,33 +19,41 @@ nav {
   margin-right: 20px;
   margin-top: 40px;
 }
-/*
-    #jsCreate{
-        font-size: 25px;
-        margin-top: 40px;
-        height: 60px;
-    }
 
-    #container2{
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+#container3 {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-    #container3{
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+#container2 {
+  position: relative;
+  margin: 0 auto;
+  height: 100%;
+}
 
-    #signup-container{
-        position: fixed;
-        top: 50%;
-        left: 50%; 
-        transform: translate(-50%, -50%);
-    }*/
+#container4 {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 40px;
+  width: 50%;
+}
+
+#container4 h3 {
+  text-align: center;
+}
+
+#signup-container {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .social {
   display: flex;
 }
@@ -66,7 +74,11 @@ nav {
   margin-bottom: 0px;
   margin-top: 50px;
   flex: 1 0 auto;
-  
+}
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 #jsCreate {
   margin-top: 40px;
@@ -78,6 +90,32 @@ nav {
   border-radius: 0.25em 0.25em 0.25em 0.25em;
   align-self: flex-end;
 }
+#table2 {
+  border: solid 2px grey;
+  border-radius: 0.25em 0.25em 0.25em 0.25em;
+  align-self: flex-end;
+}
+
 #jsDetail {
   margin-right: 0px;
+}
+#jsCancel {
+  color: black;
+}
+#jsCancel2 {
+  color: black;
+  margin-right: 40px;
+}
+#jsCancel3 {
+  color: black;
+}
+#jsBack {
+  color: black;
+  margin-top: 40px;
+}
+#jsRegister {
+  margin-left: 40px;
+}
+#jsUpdate {
+  margin-left: 40px;
 }

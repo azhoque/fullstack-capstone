@@ -4,7 +4,7 @@ const state = {
 };
 $(function() {
   renderPage();
-
+  
   $("#jsForm").submit(function(event) {
     event.preventDefault();
     const newEntry = $("#jsForm").val();
@@ -19,7 +19,7 @@ $(function() {
       share: $("#jsShare").val()
     };
     state.projects.push(newProject);
-    postDataFromApi(newProject, ()=>{
+    postDataFromApi(newProject, () => {
       renderListItem();
     });
     console.log(state);
@@ -29,100 +29,103 @@ $(function() {
     state.project.date = $("#edit-date").val();
     state.project.recentStatus = $("#edit-status").val();
     state.project.share = $("#edit-team").val();
-    if(!state.project.statusHistory){
+    if (!state.project.statusHistory) {
       state.project.statusHistory = [];
     }
-    
-    state.project.statusHistory.push(
-    {
-      'message':state.project.recentStatus,
-      'date': state.project.date
-    }
-    );
-    putDataFromApi(state.project, ()=>{
+
+    state.project.statusHistory.push({
+      message: state.project.recentStatus,
+      date: state.project.date
+    });
+    putDataFromApi(state.project, () => {
       renderListItem();
     });
-    
+
     $("#container3").hide();
   });
 
-  $("#jsForm").on('click', '#jsCancel', event => {
+  $("#jsForm").on("click", "#jsCancel", event => {
     $("#container1").show();
     $("#container2").hide();
- });
+  });
 
- $("#jsEditForm").on('click', '#jsCancel2', event => {
+  $("#jsEditForm").on("click", "#jsCancel2", event => {
     $("#container1").show();
     $("#container3").hide();
- });
+  });
+  $("#jsBack").click (event => {
+    $("#container1").show();
+    $("#container4").hide();
+  });
+  $("#jsCancel3").click (event => {
+    $("#container1").show();
+    $("#signup-container").hide();
+  });
 
- //register and log-in
- $("#reg-link").click(function(){
+  //register and log-in
+  $("#reg-link").click(function() {
     $("#signup-container").show();
     $("#container1").hide();
     $("#container2").hide();
     $("#login-container").hide();
     $("#container4").hide();
     $("#container3").hide();
- });
- $("#log-link").click(function(){
+  });
+  $("#log-link").click(function() {
     $("#signup-container").hide();
     $("#login-container").show();
     $("#container1").hide();
     $("#container2").hide();
     $("#container4").hide();
- });
+  });
 
-$("#home-link").click(function(){
-  renderPage();
+  $("#home-link").click(function() {
+    renderPage();
+  });
+  //native JS method
+  let isLoggedIn = localStorage.getItem("token");
+  if (isLoggedIn) {
+    $("#reg-link").hide();
+    $("#sign-out").show();
+  }
 });
-//native JS method
-let isLoggedIn = localStorage.getItem('token');
-if (isLoggedIn){
-  $("#reg-link").hide();
-  $("#sign-out").show();
-}
-}); 
-$("#sign-out").click(function(){
-  localStorage.removeItem('token');//native js method
+$("#sign-out").click(function() {
+  localStorage.removeItem("token"); //native js method
   location.reload();
 });
-  $("#jsRegister").click(function(){
-    let username = $("#rName").val();
-    console.log(username);
-    let useremail = $("#rEmail").val();
-    console.log(useremail);
-    let userpass = $("#rPass").val();
-    console.log(userpass);
+$("#jsRegister").click(function() {
+  let username = $("#rName").val();
+  console.log(username);
+  let useremail = $("#rEmail").val();
+  console.log(useremail);
+  let userpass = $("#rPass").val();
+  console.log(userpass);
 
-    var newUser = {"email": useremail, "username": username, "password": userpass};
-    $.ajax({     
-        type: "POST",
-        contentType: 'application/json',
-        url: "http://localhost:8080/register",
-        data: JSON.stringify(newUser),
-        success: function (data) {
-            console.log(data);
-            localStorage.setItem('token', data);
-            location.reload();
-        },
-    });
-    });
+  var newUser = { email: useremail, username: username, password: userpass };
+  $.ajax({
+    type: "POST",
+    contentType: "application/json",
+    url: "http://localhost:8080/register",
+    data: JSON.stringify(newUser),
+    success: function(data) {
+      console.log(data);
+      localStorage.setItem("token", data);
+      location.reload();
+    }
+  });
+});
 
-
-
-function handleDeleteClick(){
+function handleDeleteClick() {
   console.log("handleclicked");
   console.log(state.project);
-  deleteDataFromApi(state.project.id, state.project, ()=>{
-      location.reload();
+  deleteDataFromApi(state.project.id, state.project, () => {
+    location.reload();
   });
 }
 function renderListItem() {
   $("#jsReport").html("");
   state.projects.forEach(addProject => {
-    const newItem =
-            `<tr>
+    const newItem = `<tr>
             <td>${addProject.date}</td>
             <td>${addProject.project}</td>
             <td>${addProject.recentStatus}</td>
@@ -131,9 +134,10 @@ function renderListItem() {
             <td>${addProject.share}</td>
             
             <td>
-            <button type= "button" class="btn waves-effect waves-light" id="jsEdit">edit</button>
-            <button type= "button" class="btn waves-effect waves-light" id="jsDelete">Delete</button>
-            <button type= "button" class="btn waves-effect waves-light" id="jsDetail">Detail</button>
+            <button type= "button" class="btn waves-effect light-green darken-1 waves-light" id="jsEdit">edit</button>
+            <button type= "button" class="btn waves-effect light-green darken-1 waves-light" id="jsDetail">Detail</button>
+            <button type= "button" class="btn waves-effect red lighten-1 center-align" id="jsDelete">Delete</button>
+            
             </td>
             </tr>`;
     const newItemJs = $(newItem);
@@ -152,37 +156,35 @@ function renderListItem() {
       state.project = addProject;
       handleDeleteClick();
     });
+    newItemJs.find("#jsDetail").click(function() {
+      console.log("detail click");
+      state.project = addProject;
+      console.log(state.project);
+      $("#container1").hide();
+      $("#container2").hide();
+      $("#container3").hide();
+      $("#container4").show();
+      renderStatusList();
+    });
+   
     $("#jsReport").append(newItemJs);
   });
   $("#container1").show();
   $("#container2").hide();
 }
-  
-// function renderStatusList() {
-//   $("#jsProjectDetails").html("");
-//   state.projects.forEach(addStatus => {
-//     const newStatus 
-//     `<tr>
-//     <td>${addStatus.date}</td>
-//     <td>${addStatus.recentStatus}</td>
-//     <td>${addStatus.pm}</td>
-//     <td>${addStatus.share}</td>
-//     </tr>`;
-//     const newStatusJs = $(newStatus);
-//     newStatusJs.find("#jsDetail").click(function(){
-//       $("#container1").hide();
-//       $("#container2").hide();
-//       $("#container3").hide();
-//       $("#container4").hide();
-  
-//       state.project = addStatus;
-//     });
-//     $("#jsProjectDetails").append(newStatusJs);    
-//   });
 
-// }
-
-
+function renderStatusList() {
+  $("#jsProjectDetails").html("");
+  state.project.statusHistory.forEach(addStatus => {
+    const newStatus =
+    `<tr>
+    <td>${addStatus.date}</td>
+    <td>${addStatus.message}</td>
+    </tr>`;
+    const newStatusJs = $(newStatus);
+    $("#jsProjectDetails").append(newStatusJs);    
+  });
+}
 
 function renderPage() {
   $("#container1").show();
@@ -191,7 +193,6 @@ function renderPage() {
   $("#container4").hide();
   $("#signup-container").hide();
   $("#login-container").hide();
- 
 
   $("#jsCreate").click(function() {
     $("#container1").hide();
@@ -202,10 +203,8 @@ function renderPage() {
     $("#login-container").hide();
   });
 
-  
-
-  getDataFromApi(function(projects){
-    state.projects= projects;
+  getDataFromApi(function(projects) {
+    state.projects = projects;
     renderListItem();
   });
 }
@@ -213,9 +212,9 @@ function renderPage() {
 function getDataFromApi(callback) {
   const settings = {
     url: "http://localhost:8080/projects",
-    contentType: 'application/json',
-    
-    type: 'GET',
+    contentType: "application/json",
+
+    type: "GET",
     success: callback
   };
 
@@ -225,10 +224,10 @@ function getDataFromApi(callback) {
 function postDataFromApi(projectData, callback) {
   const settings = {
     url: "http://localhost:8080/projects",
-    
-    contentType: 'application/json',
+
+    contentType: "application/json",
     data: JSON.stringify(projectData),
-    type: 'POST',
+    type: "POST",
     success: callback
   };
 
@@ -238,9 +237,9 @@ function postDataFromApi(projectData, callback) {
 function deleteDataFromApi(projectId, projectData, callback) {
   const settings = {
     url: "http://localhost:8080/projects/" + projectId,
-    contentType: 'application/json',
-    data: JSON.stringify(projectData), 
-    type: 'DELETE',
+    contentType: "application/json",
+    data: JSON.stringify(projectData),
+    type: "DELETE",
     success: callback
   };
 
@@ -249,10 +248,10 @@ function deleteDataFromApi(projectId, projectData, callback) {
 
 function putDataFromApi(projectData, callback) {
   const settings = {
-    url: "http://localhost:8080/projects/"+ projectData.id,
-    contentType: 'application/json',
+    url: "http://localhost:8080/projects/" + projectData.id,
+    contentType: "application/json",
     data: JSON.stringify(projectData),
-    type: 'PUT',
+    type: "PUT",
     success: callback
   };
 
