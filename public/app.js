@@ -4,12 +4,19 @@ const state = {
 };
 $(function() {
   renderPage();
-  
+
   $("#jsForm").submit(function(event) {
     event.preventDefault();
     const newEntry = $("#jsForm").val();
     $("#jsForm").val("");
-    const newProject = {
+    var errors = validateFormFields();
+    var hasError = errors[0];
+    var errorMessage = errors[1];
+    if (hasError){
+      $("#errorMessage").text(errorMessage);
+    }
+    else {
+      const newProject = {
       id: state.projects.length,
       date: $("#jsDate").val(),
       project: $("#jsProject").val(),
@@ -17,13 +24,26 @@ $(function() {
       pm: $("#jsPm").val(),
       release: $("#jsRelease").val(),
       share: $("#jsShare").val()
-    };
-    state.projects.push(newProject);
-    postDataFromApi(newProject, () => {
+      };
+      state.projects.push(newProject);
+      postDataFromApi(newProject, () => {
       renderListItem();
-    });
-    console.log(state);
+      });
+      console.log(state);
+    }
   });
+  function validateFormFields (){
+    var hasError = false;
+    var errorMessage = ""
+    $('#jsForm input').each(function(){
+      if($(this).val() == ''){
+        hasError = true;
+        errorMessage = "Please fill out all the fields.";
+      }
+    });
+    var errors = [hasError, errorMessage];
+    return errors;
+}
   $("#jsEditForm").submit(function(event) {
     event.preventDefault();
     state.project.date = $("#edit-date").val();
@@ -53,11 +73,11 @@ $(function() {
     $("#container1").show();
     $("#container3").hide();
   });
-  $("#jsBack").click (event => {
+  $("#jsBack").click(event => {
     $("#container1").show();
     $("#container4").hide();
   });
-  $("#jsCancel3").click (event => {
+  $("#jsCancel3").click(event => {
     $("#container1").show();
     $("#signup-container").hide();
   });
@@ -70,6 +90,7 @@ $(function() {
     $("#login-container").hide();
     $("#container4").hide();
     $("#container3").hide();
+    $("#about-container").hide();
   });
   $("#log-link").click(function() {
     $("#signup-container").hide();
@@ -77,6 +98,15 @@ $(function() {
     $("#container1").hide();
     $("#container2").hide();
     $("#container4").hide();
+    $("#about-container").hide();
+  });
+  $("#about-link").click(function() {
+    $("#signup-container").hide();
+    $("#login-container").hide();
+    $("#container1").hide();
+    $("#container2").hide();
+    $("#container4").hide();
+    $("#about-container").show();
   });
 
   $("#home-link").click(function() {
@@ -134,9 +164,9 @@ function renderListItem() {
             <td>${addProject.share}</td>
             
             <td>
-            <button type= "button" class="btn waves-effect light-green darken-1 waves-light" id="jsEdit">edit</button>
-            <button type= "button" class="btn waves-effect light-green darken-1 waves-light" id="jsDetail">Detail</button>
-            <button type= "button" class="btn waves-effect red lighten-1 center-align" id="jsDelete">Delete</button>
+            <button type= "button" class="btn-floating waves-effect light-green darken-1 waves-light" id="jsEdit"><i class="material-icons">mode_edit</i></button>
+            <button type= "button" class="btn-floating waves-effect light-green darken-1 waves-light" id="jsDetail"><i class="material-icons">assessment</i></button>
+            <button type= "button" class="btn-floating waves-effect red lighten-1 center-align" id="jsDelete"><i class="material-icons">clear</i></button>
             
             </td>
             </tr>`;
@@ -164,9 +194,10 @@ function renderListItem() {
       $("#container2").hide();
       $("#container3").hide();
       $("#container4").show();
+      $("#about-container").hide();
       renderStatusList();
     });
-   
+
     $("#jsReport").append(newItemJs);
   });
   $("#container1").show();
@@ -176,13 +207,12 @@ function renderListItem() {
 function renderStatusList() {
   $("#jsProjectDetails").html("");
   state.project.statusHistory.forEach(addStatus => {
-    const newStatus =
-    `<tr>
+    const newStatus = `<tr>
     <td>${addStatus.date}</td>
     <td>${addStatus.message}</td>
     </tr>`;
     const newStatusJs = $(newStatus);
-    $("#jsProjectDetails").append(newStatusJs);    
+    $("#jsProjectDetails").append(newStatusJs);
   });
 }
 
@@ -193,6 +223,7 @@ function renderPage() {
   $("#container4").hide();
   $("#signup-container").hide();
   $("#login-container").hide();
+  $("#about-container").hide();
 
   $("#jsCreate").click(function() {
     $("#container1").hide();
@@ -201,6 +232,7 @@ function renderPage() {
     $("#container4").hide();
     $("#signup-container").hide();
     $("#login-container").hide();
+    $("#about-container").hide();
   });
 
   getDataFromApi(function(projects) {

@@ -12,15 +12,19 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    
-    
+
+
 </head>
 
 <body>
-    <nav class="blue lighten-2">
+    <section class="row">
+    <nav class="blue lighten-2" "col s12">
         <div class="nav-wrapper">
             <a href="#" class="brand-logo right">OnTrack</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <a href="#" data-activates="mobile-demo" class="button-collapse">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul id="side-nav" "mobile-demo" class="left hide-on-med-and-down">
                 <li>
                     <a id="home-link" href="#">Home</a>
                 </li>
@@ -36,34 +40,34 @@
             </ul>
         </div>
     </nav>
-
-
-    <section id="container1">
-        <!--<h2>Project Name:</h2>
-            <article id="jsReport">
-
-            </article>-->
-        <table id="table1" class="striped">
-            <thead id="thead" class="blue-grey lighten-4">
-                <tr>
-                    <th>Date</th>
-                    <th>Project Name</th>
-                    <th>Project Status</th>
-                    <th>Project Manager</th>
-                    <th>Release Date</th>
-                    <th>Team</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody id="jsReport">
-
-            </tbody>
-        </table>
-        <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsCreate">Add New Project</button>
     </section>
-    <section id="container2">
+    <section class="row">
+        <section id="container1" "col l8 s12 m6">
+            <section "col s12 m6">
+            <table id="table1" class="striped">
+                <thead id="thead" class="blue-grey lighten-4">
+                    <tr>
+                        <th>Date</th>
+                        <th>Project Name</th>
+                        <th>Project Status</th>
+                        <th>Project Manager</th>
+                        <th>Release Date</th>
+                        <th>Team</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="jsReport">
+                </tbody>
+            </table>
+            <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsCreate">Add New Project</button>
+        </section>
+    </section>
+</section>
+<section class="row">
+    <section id="container2" "col s12">
         <h3>Create a new Project</h3>
         <article>
+        <span id="errorMessage"></span>
             <form id="jsForm">
                 <ul>
                     <li>
@@ -94,8 +98,10 @@
                 <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsCancel">Cancel</button>
                 <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsAdd">Add</button>
             </form>
-        </article>
+            <span id="errorMessage"></span>
+        </article>   
     </section>
+</section>
     <section id="container3">
         <h3>Edit a Project</h3>
         <article>
@@ -126,7 +132,7 @@
                     <tr>
                         <th>Date</th>
                         <th>Project Status</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody id="jsProjectDetails">
@@ -178,32 +184,41 @@
         </article>
         <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsLogin">Log in</button>
     </section>
-
+<section class="row">
+    <section id="about-container" "col s12">
+        <h3>About Ontrack</h3>
+        <p>
+            Ontrack is a project management tool that help project team to keep track of project daily activily. This tool is designed 
+            with simple user experience in mind. Project team can keep track of their daily, weekly and monthly project status and share that with team.
+            Ontrack also give ability to team members to view status history.
+        </p>
+    </section>
+</section>
     <footer class="page-footer blue-grey darken-3">
         <div class="container">
             <div class="row">
-                
-                    <h5 class="white-text">Connect</h5>
-                    <ul class="social">
-                        <li>
-                            <a href="https://www.facebook.com/theaceshigh" target=_blank>
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/azizul-hoque-39b0b847/" target=_blank>
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/azhoque" target=_blank>
-                                <i class="fa fa-github" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
 
-            
+                <h5 class="white-text">Connect</h5>
+                <ul class="social">
+                    <li>
+                        <a href="https://www.facebook.com/theaceshigh" target=_blank>
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/azizul-hoque-39b0b847/" target=_blank>
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/azhoque" target=_blank>
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
         </div>
         <div class="footer-copyright">
             <div class="container">
