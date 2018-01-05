@@ -1,2 +1,11 @@
 language: node_js
 node_js: node
+services:
+- mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: Ne2qV7q9KsL35mzPdAA4yNynvKb2a3zGYKLi2AVndJRo0oq6Vg4UmyGr899oxzoB9ZF7P/dMfYa27BzwknufXsakuOxhngqnov68Bh9muMcgAfuGxjR9n0jiQxan1mdIvyEsrslq1iP+PDQiwGG7JM+YjOUcNdFl61mzkGVfIF++uM/n+IveZMw4R78bQ4W83ZjCAQjc5wnA/hJyReAGfVmhwv66DOGHWtbi/x4QPXj+2jpS5NGMcmrTOrlXz+JlpDyIYw4db3nICd3Vqo8ebwFfnlPTnI7kLVnMxdVHOLoEeac6jBm76pvPPW+OKPnbgVcqktcVXJ0wspTIP1Uh9T2HrJdHS2Ob+9u1S5xfQ3hta5KN0HYjW6lppIRoDNpfNmQcXaPmIE9zCoAfUnbXScZF4edl4MHZKRD7B7kTtUEmSVXRtdZEheH9w4nxnw+N+q+U64epwqF18kDnJ640EagN/Htzs5Z5vqjpIcXa/V8oSeaAIkgaAO0Uele5B5WQUBR/cgFfIFl7eGVdHwDzgu8dLIaHSfk4fNSSclZfa6qF5otFsWts4q8j8nJnBPRnohdptrK/gnQ+9JVh+KdW+V6sD1j8VUyuYrr5ZF0w+gkulK8ADocozh5XloW2jZkTXOYHwUSnNSBRB+1wM4tqTfvy428zYE+1DIKyua+vA7g=
+  app: ontrack
+  on:
+    repo: azhoque/fullstack-capstone
