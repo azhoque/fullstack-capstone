@@ -5,6 +5,7 @@ body {
   padding: 0px;
   margin: 0px;
   height: 100%;
+  z-index: 1;
 }
 
 nav {
@@ -86,6 +87,7 @@ nav {
   padding-top: 10px;
   margin-bottom: 0px;
   flex: 1 0 auto;
+  z-index: 2;
 }
 footer {
   width: 100%;
@@ -132,3 +134,4 @@ footer {
 #errorMessage{
   color:red;
 }
+

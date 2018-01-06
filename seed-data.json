@@ -1,0 +1,24 @@
+{
+    "date":"1/2/2018",
+    "project":"new hope",
+    "recentStatus":"Project kicked off",
+    "pm":"Luke Skywalker",
+    "release":"3/30/2018",
+    "share":"luke@zedi.com"
+}
+{
+    "date":"1/2/2018",
+    "project":"Last Jedi",
+    "recentStatus":"Delivered design",
+    "pm":"Rey",
+    "release":"4/30/2018",
+    "share":"rey@zedi.com"
+}
+{
+    "date":"1/2/2018",
+    "project":"Rogue One",
+    "recentStatus":"Project Complete",
+    "pm":"Jyn",
+    "release":"1/6/2018",
+    "share":"jyn@rogue.com"
+}
