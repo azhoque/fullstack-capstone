@@ -135,7 +135,7 @@ $("#jsRegister").click(function() {
   $.ajax({
     type: "POST",
     contentType: "application/json",
-    url: "https://shrouded-lowlands-90709.herokuapp.com/register",
+    url: "https://shrouded-lowlands-90709.herokuapp.com:443/register",
     data: JSON.stringify(newUser),
     success: function(data) {
       console.log(data);
@@ -243,7 +243,7 @@ function renderPage() {
 
 function getDataFromApi(callback) {
   const settings = {
-    url: "https://shrouded-lowlands-90709.herokuapp.com/projects",
+    url: "https://shrouded-lowlands-90709.herokuapp.com:443/projects",
     contentType: "application/json",
 
     type: "GET",
@@ -255,7 +255,7 @@ function getDataFromApi(callback) {
 
 function postDataFromApi(projectData, callback) {
   const settings = {
-    url: "https://shrouded-lowlands-90709.herokuapp.com/projects",
+    url: "https://shrouded-lowlands-90709.herokuapp.com:443/projects",
 
     contentType: "application/json",
     data: JSON.stringify(projectData),
@@ -268,7 +268,7 @@ function postDataFromApi(projectData, callback) {
 
 function deleteDataFromApi(projectId, projectData, callback) {
   const settings = {
-    url: "https://shrouded-lowlands-90709.herokuapp.com/projects/" + projectId,
+    url: "https://shrouded-lowlands-90709.herokuapp.com:443/projects/" + projectId,
     contentType: "application/json",
     data: JSON.stringify(projectData),
     type: "DELETE",
@@ -280,7 +280,7 @@ function deleteDataFromApi(projectId, projectData, callback) {
 
 function putDataFromApi(projectData, callback) {
   const settings = {
-    url: "https://shrouded-lowlands-90709.herokuapp.com/projects/" + projectData.id,
+    url: "https://shrouded-lowlands-90709.herokuapp.com:443/projects/" + projectData.id,
     contentType: "application/json",
     data: JSON.stringify(projectData),
     type: "PUT",
