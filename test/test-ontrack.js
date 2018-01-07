@@ -21,7 +21,6 @@ describe('Ontrack', function(){
             res.should.have.status(200);
             res.should.be.json;
             res.body.should.be.a('array');
-            //res.body.should.length.be.at.least(1);
             const expectedKeys = ["id", "date", "project", "pm", "recentStatus", "share"];
             res.body.forEach(item => {
                 item.should.be.a('object');
