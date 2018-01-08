@@ -15,36 +15,31 @@
 
 
 </head>
-
 <body>
     <section class="row">
-    <nav class="blue lighten-2" "col s12">
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo right">OnTrack</a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse">
-                <i class="material-icons">menu</i>
-            </a>
-            <ul id="side-nav" "mobile-demo" class="left hide-on-med-and-down">
-                <li>
-                    <a id="home-link" href="#">Home</a>
-                </li>
-                <li>
-                    <a id="about-link" href="#">About</a>
-                </li>
-                <li>
-                    <a id="reg-link" href="#">Register</a>
-                </li>
-                <li>
-                    <a hidden id="sign-out" href="#">Sign out</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+        <nav class="blue lighten-2" "col s12">
+            <div class="nav-wrapper">
+              <a href="#!" class="brand-logo">Ontrack</a>
+              <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a id="home-link" href="#">HOME</a></li>
+                <li><a id="about-link" href="#">ABOUT</a></li>
+                <li><a id="reg-link" href="#">REGISTER</a></li>
+                <li><a id="sign-out" hidden href="#">SIGN OUT</a></li>
+              </ul>
+              <ul class="side-nav" id="mobile-demo">
+                <li><a id="home-link2" href="#">HOME</a></li>
+                <li><a id="about-link2" href="#">ABOUT</a></li>
+                <li><a id="reg-link2" href="#">REGISTER</a></li>
+                <li><a id="sign-out2" hidden href="#">SIGN OUT</a></li>
+              </ul>
+            </div>
+          </nav>
     </section>
     <section class="row">
-        <section id="container1" "col l8 s12 m6">
-            <section "col s12 m6">
-            <table id="table1" class="striped">
+        <section id="container1" "col s12">
+            <section "col s12">
+            <table id="table1" class="responsive-table">
                 <thead id="thead" class="blue-grey lighten-4">
                     <tr>
                         <th>Date</th>
@@ -72,27 +67,27 @@
                 <ul>
                     <li>
                         <label>Enter or Choose a Date:</label>
-                        <input id="jsDate" type="text" placeholder="Date">
+                        <input id="jsDate" type="text" placeholder="example - 1/1/201">
                     </li>
                     <li>
                         <label>Enter Project Name:</label>
-                        <input id="jsProject" type="text" placeholder="Project">
+                        <input id="jsProject" type="text" placeholder="example - My project">
                     </li>
                     <li>
                         <label>Enter Project Status:</label>
-                        <input id="jsStatus" type="text" placeholder="Project Manager">
+                        <input id="jsStatus" type="text" placeholder="Current project status">
                     </li>
                     <li>
                         <label>Enter Project Manager Name:</label>
-                        <input id="jsPm" type="text" placeholder="text">
+                        <input id="jsPm" type="text" placeholder="PM resposible">
                     </li>
                     <li>
                         <label>Enter Release Date:</label>
-                        <input id="jsRelease" type="text" placeholder="email address">
+                        <input id="jsRelease" type="text" placeholder="example - abc@darkside.com">
                     </li>
                     <li>
                         <label>Share With Team:</label>
-                        <input id="jsShare" type="text" placeholder="email address">
+                        <input id="jsShare" type="text" placeholder="team-meamber's email address">
                     </li>
                 </ul>
                 <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsCancel">Cancel</button>
@@ -227,6 +222,7 @@
         </div>
     </footer>
     <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@ const state = {
 };
 $(function() {
   renderPage();
-
+  $(".button-collapse").sideNav();
   $("#jsForm").submit(function(event) {
     event.preventDefault();
     const newEntry = $("#jsForm").val();
@@ -92,6 +92,15 @@ $(function() {
     $("#container3").hide();
     $("#about-container").hide();
   });
+  $("#reg-link2").click(function() {
+    $("#signup-container").show();
+    $("#container1").hide();
+    $("#container2").hide();
+    $("#login-container").hide();
+    $("#container4").hide();
+    $("#container3").hide();
+    $("#about-container").hide();
+  });
   $("#log-link").click(function() {
     $("#signup-container").hide();
     $("#login-container").show();
@@ -108,8 +117,19 @@ $(function() {
     $("#container4").hide();
     $("#about-container").show();
   });
+  $("#about-link2").click(function() {
+    $("#signup-container").hide();
+    $("#login-container").hide();
+    $("#container1").hide();
+    $("#container2").hide();
+    $("#container4").hide();
+    $("#about-container").show();
+  });
 
   $("#home-link").click(function() {
+    renderPage();
+  });
+  $("#home-link2").click(function() {
     renderPage();
   });
   //native JS method
@@ -118,8 +138,18 @@ $(function() {
     $("#reg-link").hide();
     $("#sign-out").show();
   }
+  let isLoggedIn2 = localStorage.getItem("token");
+  if (isLoggedIn2) {
+    $("#reg-link2").hide();
+    $("#sign-out2").show();
+  }
 });
+
 $("#sign-out").click(function() {
+  localStorage.removeItem("token"); //native js method
+  location.reload();
+});
+$("#sign-out2").click(function() {
   localStorage.removeItem("token"); //native js method
   location.reload();
 });
@@ -136,6 +166,7 @@ $("#jsRegister").click(function() {
     type: "POST",
     contentType: "application/json",
     url: "https://shrouded-lowlands-90709.herokuapp.com/register",
+    //url: "http://localhost:8080/register",
     data: JSON.stringify(newUser),
     success: function(data) {
       console.log(data);
@@ -244,6 +275,7 @@ function renderPage() {
 function getDataFromApi(callback) {
   const settings = {
     url: "https://shrouded-lowlands-90709.herokuapp.com/projects",
+    //url: "http://localhost:8080/projects",
     contentType: "application/json",
 
     type: "GET",
@@ -256,7 +288,7 @@ function getDataFromApi(callback) {
 function postDataFromApi(projectData, callback) {
   const settings = {
     url: "https://shrouded-lowlands-90709.herokuapp.com/projects",
-
+    //url: "http://localhost:8080/projects",
     contentType: "application/json",
     data: JSON.stringify(projectData),
     type: "POST",
@@ -269,6 +301,7 @@ function postDataFromApi(projectData, callback) {
 function deleteDataFromApi(projectId, projectData, callback) {
   const settings = {
     url: "https://shrouded-lowlands-90709.herokuapp.com/projects/" + projectId,
+    //url: "http://localhost:8080/projects/" + projectId,
     contentType: "application/json",
     data: JSON.stringify(projectData),
     type: "DELETE",
@@ -281,6 +314,7 @@ function deleteDataFromApi(projectId, projectData, callback) {
 function putDataFromApi(projectData, callback) {
   const settings = {
     url: "https://shrouded-lowlands-90709.herokuapp.com/projects/" + projectData.id,
+    //url: "http://localhost:8080/projects/" + projectData.id,
     contentType: "application/json",
     data: JSON.stringify(projectData),
     type: "PUT",
