@@ -9,11 +9,10 @@ As a user, I should be able to delete project
 As a user, I should be able to enter a name for a new project
 As a user, I should be able to enter task name for a project
 As a user, I should be able to enter team members name 
-
-
+As a user, I should be able to enter release date
 As a user, I should be able to create a task
 As a user, I should be able to save task
 As a user, I should be able to edit task
 As a user, I should be able to delete task
 As a user, I should be able to enter description for a task
-As a user, I should be able to choose a due date for a task
+As a user, I should be able to register and log in
