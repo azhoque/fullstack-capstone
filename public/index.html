@@ -15,91 +15,110 @@
 
 
 </head>
+
 <body>
     <section class="row">
         <nav class="blue lighten-2" "col s12">
             <div class="nav-wrapper">
-              <a href="#!" class="brand-logo">Ontrack</a>
-              <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-              <ul class="right hide-on-med-and-down">
-                <li><a id="home-link" href="#">HOME</a></li>
-                <li><a id="about-link" href="#">ABOUT</a></li>
-                <li><a id="reg-link" href="#">REGISTER</a></li>
-                <li><a id="sign-out" hidden href="#">SIGN OUT</a></li>
-              </ul>
-              <ul class="side-nav" id="mobile-demo">
-                <li><a id="home-link2" href="#">HOME</a></li>
-                <li><a id="about-link2" href="#">ABOUT</a></li>
-                <li><a id="reg-link2" href="#">REGISTER</a></li>
-                <li><a id="sign-out2" hidden href="#">SIGN OUT</a></li>
-              </ul>
+                <a href="#!" class="brand-logo">Ontrack</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a id="home-link" href="#">HOME</a>
+                    </li>
+                    <li>
+                        <a id="about-link" href="#">ABOUT</a>
+                    </li>
+                    <li>
+                        <a id="reg-link" href="#">REGISTER</a>
+                    </li>
+                    <li>
+                        <a id="sign-out" hidden href="#">SIGN OUT</a>
+                    </li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li>
+                        <a id="home-link2" href="#">HOME</a>
+                    </li>
+                    <li>
+                        <a id="about-link2" href="#">ABOUT</a>
+                    </li>
+                    <li>
+                        <a id="reg-link2" href="#">REGISTER</a>
+                    </li>
+                    <li>
+                        <a id="sign-out2" hidden href="#">SIGN OUT</a>
+                    </li>
+                </ul>
             </div>
-          </nav>
+        </nav>
     </section>
     <section class="row">
         <section id="container1" "col s12">
             <section "col s12">
-            <table id="table1" class="responsive-table">
-                <thead id="thead" class="blue-grey lighten-4">
-                    <tr>
-                        <th>Date</th>
-                        <th>Project Name</th>
-                        <th>Project Status</th>
-                        <th>Project Manager</th>
-                        <th>Release Date</th>
-                        <th>Team</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="jsReport">
-                </tbody>
-            </table>
-            <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsCreate">Add New Project</button>
+                <table id="table1" class="responsive-table">
+                    <thead id="thead" class="blue-grey lighten-4">
+                        <tr>
+                            <th>Date</th>
+                            <th>Project Name</th>
+                            <th>Project Status</th>
+                            <th>Project Manager</th>
+                            <th>Release Date</th>
+                            <th>Team</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="jsReport">
+                    </tbody>
+                </table>
+                <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsCreate">Add New Project</button>
+            </section>
         </section>
     </section>
-</section>
-<section class="row">
-    <section id="container2" "col s12">
-        <h3>Create a new Project</h3>
-        <article>
-        <span id="errorMessage"></span>
-            <form id="jsForm">
-                <ul>
-                    <li>
-                        <label>Enter or Choose a Date:</label>
-                        <input id="jsDate" type="text" placeholder="example - 1/1/201">
-                    </li>
-                    <li>
-                        <label>Enter Project Name:</label>
-                        <input id="jsProject" type="text" placeholder="example - My project">
-                    </li>
-                    <li>
-                        <label>Enter Project Status:</label>
-                        <input id="jsStatus" type="text" placeholder="Current project status">
-                    </li>
-                    <li>
-                        <label>Enter Project Manager Name:</label>
-                        <input id="jsPm" type="text" placeholder="PM resposible">
-                    </li>
-                    <li>
-                        <label>Enter Release Date:</label>
-                        <input id="jsRelease" type="text" placeholder="example - abc@darkside.com">
-                    </li>
-                    <li>
-                        <label>Share With Team:</label>
-                        <input id="jsShare" type="text" placeholder="team-meamber's email address">
-                    </li>
-                </ul>
-                <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsCancel">Cancel</button>
-                <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsAdd">Add</button>
-            </form>
-            <span id="errorMessage"></span>
-        </article>   
+    <section class="row">
+        <section id="container2" "col s12">
+            <h3>Create a new Project</h3>
+            <article>
+                <span id="errorMessage"></span>
+                <form id="jsForm">
+                    <ul>
+                        <li>
+                            <label>Enter or Choose a Date:</label>
+                            <input id="jsDate" type="text" placeholder="example - 1/1/201">
+                        </li>
+                        <li>
+                            <label>Enter Project Name:</label>
+                            <input id="jsProject" type="text" placeholder="example - My project">
+                        </li>
+                        <li>
+                            <label>Enter Project Status:</label>
+                            <input id="jsStatus" type="text" placeholder="Current project status">
+                        </li>
+                        <li>
+                            <label>Enter Project Manager Name:</label>
+                            <input id="jsPm" type="text" placeholder="PM resposible">
+                        </li>
+                        <li>
+                            <label>Enter Release Date:</label>
+                            <input id="jsRelease" type="text" placeholder="abc@darkside.com">
+                        </li>
+                        <li>
+                            <label>Team-member:</label>
+                            <input id="jsShare" type="text" placeholder="team">
+                        </li>
+                    </ul>
+                    <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsCancel">Cancel</button>
+                    <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsAdd">Add</button>
+                </form>
+            </article>
+        </section>
     </section>
-</section>
     <section id="container3">
         <h3>Edit a Project</h3>
         <article>
+            <span id="errorMessage2"></span>
             <form id="jsEditForm">
                 <ul>
                     <li>
@@ -111,7 +130,7 @@
                         <input id="edit-status" type="text" placeholder="text">
                     </li>
                     <li>
-                        <label>Team:</label>
+                        <label>Team-member:</label>
                         <input id="edit-team" type="text" placeholder="name">
                 </ul>
                 <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsCancel2">Cancel</button>
@@ -139,16 +158,17 @@
 
     </section>
     <section id="signup-container">
-        <h3>Register:</h3>
+        <h3>Register</h3>
         <article>
+            <span id="errorMessage3"></span>
             <form id="jsRegisterForm">
                 <ul>
                     <li>
-                        <label>Enter Your Name:</label>
-                        <input id="rName" type="text" placeholder="name">
+                        <label>Username:</label>
+                        <input id="rName" type="text" placeholder="">
                     </li>
                     <li>
-                        <label>Enter Your e-mail:</label>
+                        <label>Your e-mail Address:</label>
                         <input id="rEmail" type="text" placeholder="name@example.com">
                     </li>
                     <li>
@@ -164,11 +184,12 @@
     <section id="login-container">
         <h3>Log in:</h3>
         <article id="jsRegister">
+            <span id="errorMessage4"></span>
             <form id="jsRegisterForm">
                 <ul>
                     <li>
                         <label>Enter Your e-mail:</label>
-                        <input id="lEmail" type="text" placeholder="name">
+                        <input id="lEmail" type="text" placeholder="abc@example.com">
                     </li>
                     <li>
                         <label>Enter Your Password:</label>
@@ -179,20 +200,18 @@
         </article>
         <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsLogin">Log in</button>
     </section>
-<section class="row">
-    <section id="about-container" "col s12">
-        <h3>About Ontrack</h3>
-        <p>
-            Ontrack is a project management tool that help project team to keep track of project daily activily. This tool is designed 
-            with simple user experience in mind. Project team can keep track of their daily, weekly and monthly project status and share that with team.
-            Ontrack also give ability to team members to view status history.
-        </p>
+    <section class="row">
+        <section id="about-container" "col s12">
+            <h3>About Ontrack</h3>
+            <p>
+                Ontrack is a project management tool that help project team to keep track of project daily activily. This tool is designed
+                with simple user experience in mind. Project team can keep track of their daily, weekly and monthly project
+                status and share that with team. Ontrack also give ability to team members to view status history.
+            </p>
+        </section>
     </section>
-</section>
     <footer class="page-footer blue-grey darken-3">
         <div class="container">
-            <div class="row">
-
                 <h5 class="white-text">Connect</h5>
                 <ul class="social">
                     <li>
@@ -212,8 +231,6 @@
                     </li>
                 </ul>
             </div>
-
-
         </div>
         <div class="footer-copyright">
             <div class="container">

@@ -9,25 +9,24 @@ body {
 }
 
 nav {
-  padding-left: 20px !important;
-  padding-right: 20px !important;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #container1 {
   position: relative;
   margin: 0 auto;
-  margin-top: 40px;
   width: 80%;
   margin-top: 40px;
-  margin-bottom: 250px;
+  min-height: 100%;
 }
 
 #container3 {
-  position: fixed;
-  top: 35%;
-  left: 50%;
+  position: relative;
+  margin: 0 auto;
   width: 50%;
-  transform: translate(-50%, -50%);
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 #container3 h3 {
   text-align: center;
@@ -35,9 +34,9 @@ nav {
 #container2 {
   position: relative;
   margin: 0 auto;
-  margin-top: 40px;
   width: 50%;
   margin-top: 40px;
+  min-height: 100%;
   margin-bottom: 250px;
 }
 #container2 h3 {
@@ -46,8 +45,9 @@ nav {
 #container4 {
   position: relative;
   margin: 0 auto;
-  margin-top: 40px;
   width: 50%;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 #container4 h3 {
@@ -56,43 +56,47 @@ nav {
 #about-container{
   position: relative;
   margin: 0 auto;
-  margin-top: 40px;
   width: 50%;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 #about-container h3 {
   text-align: center;
 }
 #signup-container {
-  position: fixed;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+#signup-container h3 {
+  text-align: center;
 }
 .social {
   display: flex;
+  
 }
 .social li {
   margin-right: 20px;
   font-size: 30px;
   color: white;
+  
 }
 .social a {
   color: #eceff1;
 }
 .footer-copyright {
-  padding: 0 !important;
+  padding: 0;
 }
 .page-footer {
   padding-bottom: 0;
   padding-top: 10px;
-  margin-bottom: 0px;
-  flex: 1 0 auto;
   z-index: 2;
-}
-footer {
   width: 100%;
-  position: fixed;
   bottom: 0;
+  position: fixed;
+  
 }
 #jsCreate {
   margin: 0 auto;
@@ -109,15 +113,15 @@ footer {
   border: solid 2px grey;
   border-radius: 0.25em 0.25em 0.25em 0.25em;
   align-self: flex-end;
-}
-
+} 
 #jsDetail {
   margin-right: 0px;
 }
 #jsCancel {
   color: black;
+  margin-right: 40px;
 }
-#jsCancel2 {
+#jsCancel2 { 
   color: black;
   margin-right: 40px;
 }
