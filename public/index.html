@@ -35,6 +35,9 @@
                         <a id="reg-link" href="#">REGISTER</a>
                     </li>
                     <li>
+                        <a id="log-link" href="#">LOG IN</a>
+                    </li>
+                    <li>
                         <a id="sign-out" hidden href="#">SIGN OUT</a>
                     </li>
                 </ul>
@@ -47,6 +50,9 @@
                     </li>
                     <li>
                         <a id="reg-link2" href="#">REGISTER</a>
+                    </li>
+                    <li>
+                        <a id="log-link2" href="#">LOG IN</a>
                     </li>
                     <li>
                         <a id="sign-out2" hidden href="#">SIGN OUT</a>
@@ -165,7 +171,7 @@
                 <ul>
                     <li>
                         <label>Username:</label>
-                        <input id="rName" type="text" placeholder="">
+                        <input id="rName" type="text" placeholder="username">
                     </li>
                     <li>
                         <label>Your e-mail Address:</label>
@@ -183,13 +189,13 @@
     </section>
     <section id="login-container">
         <h3>Log in:</h3>
-        <article id="jsRegister">
+        <article>
             <span id="errorMessage4"></span>
-            <form id="jsRegisterForm">
+            <form id="jsLogInForm">
                 <ul>
                     <li>
-                        <label>Enter Your e-mail:</label>
-                        <input id="lEmail" type="text" placeholder="abc@example.com">
+                        <label>Username:</label>
+                        <input id="lName" type="text" placeholder="username">
                     </li>
                     <li>
                         <label>Enter Your Password:</label>
@@ -198,7 +204,7 @@
                 </ul>
             </form>
         </article>
-        <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsLogin">Log in</button>
+        <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsLogIn">Log in</button>
     </section>
     <section class="row">
         <section id="about-container" "col s12">

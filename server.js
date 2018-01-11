@@ -97,6 +97,36 @@ app.delete("/:id", (req, res) => {
     res.status(204).end();
   });
 });
+app.post('/login', (req, res) => {
+  let username = req.body.username;
+  let password = req.body.password;
+  let user;
+  User.findOne({ username: username })
+    .then(_user => {
+      user = _user;
+      if (!user) {
+        // Return a rejected promise so we break out of the chain of .thens.
+        // Any errors like this will be handled in the catch block.
+        return Promise.reject({
+          reason: 'LoginError',
+          message: 'Incorrect username or password'
+        });
+      }
+      return user.validatePassword(password);
+    })
+    .then(isValid => {
+      if (!isValid) {
+        return Promise.reject({
+          reason: 'LoginError',
+          message: 'Incorrect username or password'
+        });
+      }
+      else{
+        const authToken = createAuthToken(user);
+        return res.status(201).json(authToken); 
+      }
+    })
+});  
 
 app.post('/register', (req, res) => {
   let username = req.body.username;
