@@ -63,6 +63,16 @@ nav {
 #about-container h3 {
   text-align: center;
 }
+#login-container{
+  position: relative;
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+#login-container h3{
+  text-align: center;
+}
 #signup-container {
   position: relative;
   margin: 0 auto;
@@ -117,6 +127,7 @@ nav {
 #jsDetail {
   margin-right: 0px;
 }
+
 #jsCancel {
   color: black;
   margin-right: 40px;
