@@ -188,8 +188,8 @@ $("#jsLogIn").click(function() {
   $.ajax({
     type: "POST",
     contentType: "application/json",
-    //url: "https://shrouded-lowlands-90709.herokuapp.com/login",
-    url: "http://localhost:8080/login",
+    url: "https://shrouded-lowlands-90709.herokuapp.com/login",
+    //url: "http://localhost:8080/login",
     data: JSON.stringify(newUser),
     success: function(data) {
       console.log(data);
@@ -297,8 +297,8 @@ function renderPage() {
 
 function getDataFromApi(callback) {
   const settings = {
-    //url: "https://shrouded-lowlands-90709.herokuapp.com/projects",
-    url: "http://localhost:8080/projects",
+    url: "https://shrouded-lowlands-90709.herokuapp.com/projects",
+    //url: "http://localhost:8080/projects",
     contentType: "application/json",
 
     type: "GET",
@@ -310,8 +310,8 @@ function getDataFromApi(callback) {
 
 function postDataFromApi(projectData, callback) {
   const settings = {
-    //url: "https://shrouded-lowlands-90709.herokuapp.com/projects",
-    url: "http://localhost:8080/projects",
+    url: "https://shrouded-lowlands-90709.herokuapp.com/projects",
+    //url: "http://localhost:8080/projects",
     contentType: "application/json",
     data: JSON.stringify(projectData),
     type: "POST",
@@ -323,8 +323,8 @@ function postDataFromApi(projectData, callback) {
 
 function deleteDataFromApi(projectId, projectData, callback) {
   const settings = {
-    //url: "https://shrouded-lowlands-90709.herokuapp.com/projects/" + projectId,
-    url: "http://localhost:8080/projects/" + projectId,
+    url: "https://shrouded-lowlands-90709.herokuapp.com/projects/" + projectId,
+    //url: "http://localhost:8080/projects/" + projectId,
     contentType: "application/json",
     data: JSON.stringify(projectData),
     type: "DELETE",
@@ -336,8 +336,8 @@ function deleteDataFromApi(projectId, projectData, callback) {
 
 function putDataFromApi(projectData, callback) {
   const settings = {
-    //url: "https://shrouded-lowlands-90709.herokuapp.com/projects/" + projectData.id,
-    url: "http://localhost:8080/projects/" + projectData.id,
+    url: "https://shrouded-lowlands-90709.herokuapp.com/projects/" + projectData.id,
+    //url: "http://localhost:8080/projects/" + projectData.id,
     contentType: "application/json",
     data: JSON.stringify(projectData),
     type: "PUT",
