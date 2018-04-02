@@ -14,11 +14,15 @@ nav {
 }
 
 #container1 {
-  position: relative;
+ 
   margin: 0 auto;
   width: 80%;
   margin-top: 40px;
-  min-height: 100%;
+  height: 100%;
+  /*margin-bottom: 30px;*/
+  display: block;
+  min-height: 100vh;
+  /*flex-direction: column;*/
 }
 
 #container3 {
@@ -26,7 +30,8 @@ nav {
   margin: 0 auto;
   width: 50%;
   margin-top: 40px;
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
+  min-height: 100vh;
 }
 #container3 h3 {
   text-align: center;
@@ -37,7 +42,8 @@ nav {
   width: 50%;
   margin-top: 40px;
   min-height: 100%;
-  margin-bottom: 250px;
+  /*margin-bottom: 30px;*/
+  min-height: 100vh;
 }
 #container2 h3 {
   text-align: center;
@@ -47,7 +53,8 @@ nav {
   margin: 0 auto;
   width: 50%;
   margin-top: 40px;
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
+  min-height: 100vh;
 }
 
 #container4 h3 {
@@ -58,17 +65,25 @@ nav {
   margin: 0 auto;
   width: 50%;
   margin-top: 40px;
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
+  min-height: 100vh;
 }
 #about-container h3 {
   text-align: center;
 }
+
+#about-container p {
+  line-height: 140%;
+  font-size: 30px;
+}
+
 #login-container{
   position: relative;
   margin: 0 auto;
   width: 50%;
   margin-top: 40px;
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
+  min-height: 100vh;
 }
 #login-container h3{
   text-align: center;
@@ -78,7 +93,8 @@ nav {
   margin: 0 auto;
   width: 50%;
   margin-top: 40px;
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
+  min-height: 100vh;
 }
 #signup-container h3 {
   text-align: center;
@@ -102,22 +118,23 @@ nav {
 .page-footer {
   padding-bottom: 0;
   padding-top: 10px;
-  z-index: 2;
+  /*z-index: 2;*/
+  position: relative;
   width: 100%;
   bottom: 0;
-  position: fixed;
-  
 }
+
 #jsCreate {
   margin: 0 auto;
-  display: block;
   margin-top: 40px;
+  -webkit-appearance: none;
   
 }
 #table1 {
   border: solid 2px grey;
   border-radius: 0.25em 0.25em 0.25em 0.25em;
   align-self: flex-end;
+  
 }
 #table2 {
   border: solid 2px grey;
@@ -128,23 +145,52 @@ nav {
   margin-right: 0px;
 }
 
+#jsAdd {
+  margin-bottom: 20px;
+}
+
 #jsCancel {
   color: black;
   margin-right: 40px;
+  margin-bottom: 20px;
 }
+
+#jsUpdate {
+  margin-bottom: 20px;
+}
+
 #jsCancel2 { 
   color: black;
   margin-right: 40px;
+  margin-bottom: 20px;
+ 
 }
 #jsCancel3 {
   color: black;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  
 }
+
+#jsLogIn {
+  margin-bottom: 20px;
+}
+
+#jsCancel4 {
+  color: black;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+
+
 #jsBack {
   color: black;
   margin-top: 40px;
+  margin-bottom: 20px;
+  
 }
 #jsRegister {
-  margin-left: 40px;
+  margin-bottom: 20px;
 }
 #errorMessage{
   color:red;

@@ -17,8 +17,8 @@
 </head>
 
 <body>
-    <section class="row">
-        <nav class="blue lighten-2" "col s12">
+    <div class="row">
+        <nav class="blue lighten-2" "col s12 m6">
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo">Ontrack</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse">
@@ -60,10 +60,11 @@
                 </ul>
             </div>
         </nav>
-    </section>
-    <section class="row">
-        <section id="container1" "col s12">
-            <section "col s12">
+    </div>
+
+    <div id="container1">
+        <div class="row">
+            <div class="col s12 center">
                 <table id="table1" class="responsive-table">
                     <thead id="thead" class="blue-grey lighten-4">
                         <tr>
@@ -76,167 +77,197 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody id="jsReport">
+                    <tbody 
+                        id="jsReport"> 
                     </tbody>
                 </table>
                 <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsCreate">Add New Project</button>
-            </section>
-        </section>
-    </section>
-    <section class="row">
-        <section id="container2" "col s12">
-            <h3>Create a new Project</h3>
-            <article>
-                <span id="errorMessage"></span>
-                <form id="jsForm">
-                    <ul>
-                        <li>
-                            <label>Enter a Date:</label>
-                            <input id="jsDate" type="text" placeholder="example - 1/1/201">
-                        </li>
-                        <li>
-                            <label>Enter Project Name:</label>
-                            <input id="jsProject" type="text" placeholder="example - My project">
-                        </li>
-                        <li>
-                            <label>Enter Project Status:</label>
-                            <input id="jsStatus" type="text" placeholder="Current project status">
-                        </li>
-                        <li>
-                            <label>Enter Project Manager Name:</label>
-                            <input id="jsPm" type="text" placeholder="PM resposible">
-                        </li>
-                        <li>
-                            <label>Enter Release Date:</label>
-                            <input id="jsRelease" type="text" placeholder="example - 1/1/201">
-                        </li>
-                        <li>
-                            <label>Team-member:</label>
-                            <input id="jsShare" type="text" placeholder="name">
-                        </li>
-                    </ul>
-                    <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsCancel">Cancel</button>
-                    <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsAdd">Add</button>
-                </form>
-            </article>
-        </section>
-    </section>
-    <section id="container3">
-        <h3>Edit a Project</h3>
-        <article>
-            <span id="errorMessage2"></span>
-            <form id="jsEditForm">
-                <ul>
-                    <li>
-                        <label>Enter or Choose a Date:</label>
-                        <input id="edit-date" type="text" placeholder="Date">
-                    </li>
-                    <li>
-                        <label>Enter Project Status:</label>
-                        <input id="edit-status" type="text" placeholder="text">
-                    </li>
-                    <li>
-                        <label>Team-member:</label>
-                        <input id="edit-team" type="text" placeholder="name">
-                </ul>
-                <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsCancel2">Cancel</button>
-                <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsUpdate">Update</button>
-            </form>
-        </article>
-    </section>
-    <section id="container4">
-        <h3>Project Details</h3>
-        <article>
-            <table id="table2" class="striped">
-                <thead id="thead2" class="blue-grey lighten-4">
-                    <tr>
-                        <th>Date</th>
-                        <th>Project Status</th>
+            </div>
+        </div>
+    </div>
 
-                    </tr>
-                </thead>
-                <tbody id="jsProjectDetails">
+    <div id="container2">
+        <div class="row">
+            <div class="col s12">
+                <h3>Create a new Project</h3>
+                <article>
+                    <span id="errorMessage"></span>
+                    <form id="jsForm">
+                        <ul>
+                            <li>
+                                <label>Enter a Date:</label>
+                                <input id="jsDate" type="text" placeholder="example - 1/1/201">
+                            </li>
+                            <li>
+                                <label>Enter Project Name:</label>
+                                <input id="jsProject" type="text" placeholder="example - My project">
+                            </li>
+                            <li>
+                                <label>Enter Project Status:</label>
+                                <input id="jsStatus" type="text" placeholder="Current project status">
+                            </li>
+                            <li>
+                                <label>Enter Project Manager Name:</label>
+                                <input id="jsPm" type="text" placeholder="PM resposible">
+                            </li>
+                            <li>
+                                <label>Enter Release Date:</label>
+                                <input id="jsRelease" type="text" placeholder="example - 1/1/201">
+                            </li>
+                            <li>
+                                <label>Team-member:</label>
+                                <input id="jsShare" type="text" placeholder="name">
+                            </li>
+                        </ul>
+                        <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsCancel">Cancel</button>
+                        <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsAdd">Add</button>
+                    </form>
+                </article>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="container3">
+            <div class="col s12">
+                <h3>Edit a Project</h3>
+                <article>
+                    <span id="errorMessage2"></span>
+                    <form id="jsEditForm">
+                        <ul>
+                            <li>
+                                <label>Enter or Choose a Date:</label>
+                                <input id="edit-date" type="text" placeholder="Date">
+                            </li>
+                            <li>
+                                <label>Enter Project Status:</label>
+                                <input id="edit-status" type="text" placeholder="text">
+                            </li>
+                            <li>
+                                <label>Team-member:</label>
+                                <input id="edit-team" type="text" placeholder="name">
+                        </ul>
+                        <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsCancel2">Cancel</button>
+                        <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsUpdate">Update</button>
+                    </form>
+                </article>
+            </div>
+        </div>
+    </div>
 
-                </tbody>
-            </table>
-            <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsBack">Go Back</button>
-        </article>
+    <div id="container4">
+        <div class="row">
+            <div>class="col s12">
+                <h3>Project Details</h3>
+                <article>
+                    <table id="table2" class="striped">
+                        <thead id="thead2" class="blue-grey lighten-4">
+                            <tr>
+                                <th>Date</th>
+                                <th>Project Status</th>
 
-    </section>
-    <section id="signup-container">
-        <h3>Register</h3>
-        <article>
-            <span id="errorMessage3"></span>
-            <form id="jsRegisterForm">
-                <ul>
-                    <li>
-                        <label>Username:</label>
-                        <input id="rName" type="text" placeholder="username">
-                    </li>
-                    <li>
-                        <label>Your e-mail Address:</label>
-                        <input id="rEmail" type="text" placeholder="name@example.com">
-                    </li>
-                    <li>
-                        <label>Create Your Password:</label>
-                        <input id="rPass" type="text" placeholder="password">
-                    </li>
-                </ul>
-            </form>
-        </article>
-        <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsCancel3">Cancel</button>
-        <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsRegister">Sign up</button>
-    </section>
-    <section id="login-container">
-        <h3>Log in:</h3>
-        <article>
-            <span id="errorMessage4"></span>
-            <form id="jsLogInForm">
-                <ul>
-                    <li>
-                        <label>Username:</label>
-                        <input id="lName" type="text" placeholder="username">
-                    </li>
-                    <li>
-                        <label>Enter Your Password:</label>
-                        <input id="lPass" type="text" placeholder="password">
-                    </li>
-                </ul>
-            </form>
-        </article>
-        <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsLogIn">Log in</button>
-    </section>
-    <section class="row">
-        <section id="about-container" "col s12">
-            <h3>About Ontrack</h3>
-            <p>
-                Ontrack is a project management tool that help project team to keep track of project daily activily. This tool is designed
-                with simple user experience in mind. Project team can keep track of their daily, weekly and monthly project
-                status and share that with team. Ontrack also give ability to team members to view status history.
-            </p>
-        </section>
-    </section>
+                            </tr>
+                        </thead>
+                        <tbody id="jsProjectDetails">
+
+                        </tbody>
+                    </table>
+                    <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsBack">Go Back</button>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <div id="signup-container">
+        <div class="row">
+            <div class="col s12">
+                <h3>Register</h3>
+                <article>
+                    <span id="errorMessage3"></span>
+                    <form id="jsRegisterForm">
+                        <ul>
+                            <li>
+                                <label>Username:</label>
+                                <input id="rName" type="text" placeholder="username">
+                            </li>
+                            <li>
+                                <label>Your e-mail Address:</label>
+                                <input id="rEmail" type="text" placeholder="name@example.com">
+                            </li>
+                            <li>
+                                <label>Create Your Password:</label>
+                                <input id="rPass" type="text" placeholder="password">
+                            </li>
+                        </ul>
+                    </form>
+                </article>
+                <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsCancel3">Cancel</button>
+                <button class="btn waves-effect blue lighten-2 center-align" type="submit" id="jsRegister">Sign up</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="login-container">
+        <div class="row">
+            <div class="col s12">
+                <h3>Log in</h3>
+                <article>
+                    <span id="errorMessage4"></span>
+                    <form id="jsLogInForm">
+                        <ul>
+                            <li>
+                                <label>Username:</label>
+                                <input id="lName" type="text" placeholder="username">
+                            </li>
+                            <li>
+                                <label>Enter Your Password:</label>
+                                <input id="lPass" type="text" placeholder="password">
+                            </li>
+                        </ul>
+                    </form>
+                </article>
+                <button class="btn waves-effect grey lighten-5 center-align" type="button" id="jsCancel4">Cancel</button>
+                <button class="btn waves-effect blue lighten-2 center-align" "col s12 m6" type="submit" id="jsLogIn">Log in</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="about-container">
+        <div class="row">
+            <div class="col s12">
+                <h3>About Ontrack</h3>
+                <p>
+                    Ontrack is a project management tool that helps project team to keep track of project daily activity. This tool is designed
+                    with simple user experience in mind. Project team can keep track of their daily, weekly and monthly project
+                    status and share that with team. Ontrack also give ability to team members to view status history.
+                </p>
+            </div>
+        </div>
+    </div>
     <footer class="page-footer blue-grey darken-3">
         <div class="container">
-                <h5 class="white-text">Connect</h5>
-                <ul class="social">
-                    <li>
-                        <a href="https://www.facebook.com/theaceshigh" target=_blank>
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/azizul-hoque-39b0b847/" target=_blank>
-                            <i class="fa fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/azhoque" target=_blank>
-                            <i class="fa fa-github" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                </ul>
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Connect</h5>
+                    <ul class="social">
+                        <li>
+                            <a href="https://www.facebook.com/theaceshigh" target=_blank>
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/azizul-hoque-39b0b847/" target=_blank>
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/azhoque" target=_blank>
+                                <i class="fa fa-github" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
