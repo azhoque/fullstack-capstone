@@ -14,7 +14,6 @@ nav {
 }
 
 #container1 {
- 
   margin: 0 auto;
   width: 80%;
   margin-top: 40px;
@@ -23,6 +22,12 @@ nav {
   display: block;
   min-height: 100vh;
   /*flex-direction: column;*/
+}
+
+#container1 h2 {
+  text-align: center;
+  font-size: 30px;
+
 }
 
 #container3 {
@@ -35,6 +40,7 @@ nav {
 }
 #container3 h3 {
   text-align: center;
+  font-size: 30px;
 }
 #container2 {
   position: relative;
@@ -47,6 +53,7 @@ nav {
 }
 #container2 h3 {
   text-align: center;
+  font-size: 30px;
 }
 #container4 {
   position: relative;
@@ -59,22 +66,24 @@ nav {
 
 #container4 h3 {
   text-align: center;
+  font-size: 30px;
 }
 #about-container{
   position: relative;
   margin: 0 auto;
-  width: 50%;
+  width: 65%;
   margin-top: 40px;
   /*margin-bottom: 30px;*/
   min-height: 100vh;
 }
 #about-container h3 {
   text-align: center;
+  font-size: 30px;
 }
 
 #about-container p {
-  line-height: 140%;
-  font-size: 30px;
+  line-height: 200%;
+  
 }
 
 #login-container{
@@ -87,6 +96,7 @@ nav {
 }
 #login-container h3{
   text-align: center;
+  font-size: 30px;
 }
 #signup-container {
   position: relative;
@@ -98,6 +108,7 @@ nav {
 }
 #signup-container h3 {
   text-align: center;
+  font-size: 30px;
 }
 .social {
   display: flex;
